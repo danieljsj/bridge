@@ -1,0 +1,21 @@
+/* Kimbia / GiveMN Widget Tweaks */
+
+.inputGroup.couponCode,
+#kimbiaView_1_AddaTip,
+#kimbiaView_1_TipAmount,
+label.groupLabel,
+.k_messagingProfile,
+.k_shareThisFormBlock {
+  display:none !important;
+}
+
+.kimbiaDiv input[type="text"], 
+.kimbiaDiv input[type="email"], 
+.kimbiaDiv textarea {
+  color: rgba(255,255,255,.5);
+}
+.kimbiaDiv select,
+.kimbiaDiv button.forward {
+  color: rgba(0,0,0,.5);
+}
+
