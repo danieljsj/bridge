@@ -1,5 +1,8 @@
 /* Kimbia / GiveMN Widget Tweaks */
 
+
+/* removal and fixing of elements */
+
 .inputGroup.couponCode,
 #kimbiaView_1_AddaTip,
 #kimbiaView_1_TipAmount,
@@ -19,3 +22,23 @@ label.groupLabel,
   color: rgba(0,0,0,.5);
 }
 
+#kimbiaView_1_DonationLevel .k_radioCB:not(.k_ongoing):not(.k_oneTime) {
+	font-weight: bold;
+}
+#kimbiaView_1_DonationLevel .k_radioCB .fieldCaption {
+	font-weight: normal;
+}
+
+
+
+/* specific styling */
+
+div.kimbiaDiv button.k_button.forward {
+	padding: 10px 20px;
+	border-radius: 10px;
+	background-color: #eeeeee;
+	font-size: 1.75em !important;
+}
+div.kimbiaDiv button.k_button.forward:hover {
+	opacity: .8;
+}

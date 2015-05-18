@@ -28,7 +28,6 @@ img {max-width: 100%;}
 /* FRAMEWORK */
 
 inner
-/*, header inner > * */
 {
 	max-width: 900px;
 	margin: 0 auto;
@@ -58,9 +57,23 @@ header * {
 }
 header {
 	background-image: url('images/bridge-background.jpg');
+	background-image: url('http://localhost/Pictures/b4h/bridge-background-gray.jpg');
+	background-image: none;
+	/* background-color: #CED78A; /* too light */
+	/* background-color: #B0BF20; /* way too much */
+	/* background-color: #545738; /* too brown */
+	/* background-color: #6A7314; /* too much */
+	/* background-color: #525A0F; /* still too much */
+	/*background-color: RGB(119, 119, 100); clashes with gray from letters*/
+	/*background-color: RGB(150, 156, 161);  too light/bright gray */
+	/*background-color: RGB(102, 107, 110);*/
+	background-color: HSL(203, 7%, 43%);
+	background-color: HSL(203, 7%, 53%);
+	background-color: HSL(207, 6%, 61%);
+	background-color: HSL(207, 6%, 58%);
 	background-size: cover;
 	padding: 5%;
-	height:100vh;
+	/* height:100vh; */
 	display:table;
 	width: 100%;
 }
@@ -70,6 +83,7 @@ header content {
 }
 header img {
 	width: 350px;
+	width: 450px;
 	max-width: 100%;
 }
 header hr {
