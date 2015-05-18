@@ -60,10 +60,6 @@ header, header p, header a {
 	/*color: HSL(66, 71%, 44%);*/
 	color: #959BA0;
 }
-h1,h2,h3,h4,h5,h6{
-
-}
-
 header {
 	background-image: url('images/bridge-background.jpg');
 	background-image: url('http://localhost/Pictures/b4h/bridge-background-gray.jpg');
