@@ -60,6 +60,7 @@ header, header p, header a {
 	/*color: HSL(66, 71%, 44%);*/
 	color: #959BA0;
 }
+
 header {
 	background-image: url('images/bridge-background.jpg');
 	background-image: url('http://localhost/Pictures/b4h/bridge-background-gray.jpg');
@@ -77,12 +78,19 @@ header {
 	background-color: HSL(207, 6%, 61%);
 	background-color: HSL(207, 6%, 58%);
 	background-color: transparent;
+}
+header, section.divider{
 	background-size: cover;
 	padding: 5%;
 	/* height:100vh; */
 	display:table;
 	width: 100%;
 }
+section.divider {
+	text-align: center;
+	color: #ffffff;
+}
+section.divider content,
 header content {
 	display: table-cell;
 	vertical-align: middle;
@@ -94,6 +102,7 @@ header img {
 	max-width: 100%;
 	margin: -100px;
 }
+section.divider hr,
 header hr {
 	width: 50%;
 }
