@@ -5,6 +5,7 @@ body {
 	margin:0;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 20px;
+	color: #444444;
 }
 
 h1 {font-size: 3.00em}
@@ -51,10 +52,18 @@ section {display:block;}
 
 /* Header */
 
-header * {
+header, header p, header a {
 	text-align: center;
-	color:white;
+	/*color: #FFFFFF;*/
+	/*color: HSL(207, 6%, 61%);*/
+	/*color: HSL(205, 38%, 41%);*/
+	/*color: HSL(66, 71%, 44%);*/
+	color: #959BA0;
 }
+h1,h2,h3,h4,h5,h6{
+
+}
+
 header {
 	background-image: url('images/bridge-background.jpg');
 	background-image: url('http://localhost/Pictures/b4h/bridge-background-gray.jpg');
@@ -71,6 +80,7 @@ header {
 	background-color: HSL(203, 7%, 53%);
 	background-color: HSL(207, 6%, 61%);
 	background-color: HSL(207, 6%, 58%);
+	background-color: transparent;
 	background-size: cover;
 	padding: 5%;
 	/* height:100vh; */
@@ -84,7 +94,9 @@ header content {
 header img {
 	width: 350px;
 	width: 450px;
+	width: 550px;
 	max-width: 100%;
+	margin: -100px;
 }
 header hr {
 	width: 50%;
@@ -103,5 +115,3 @@ header p, .intro p{
 	color: white;
 	text-align:center;
 }
-
-
