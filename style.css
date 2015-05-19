@@ -3,6 +3,8 @@
 }
 body {
 	margin:0;
+}
+body, input, textarea, keygen, select, button {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 20px;
 	color: #444444;
@@ -24,8 +26,12 @@ hr {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-img {max-width: 100%;}
+img { max-width: 100%;}
 
+sup { 
+	opacity: .5; 
+	font-weight: 200;
+}
 /* FRAMEWORK */
 
 inner
@@ -52,13 +58,25 @@ section {display:block;}
 
 /* Header */
 
-header, header p, header a {
+header {
 	text-align: center;
 	/*color: #FFFFFF;*/
 	/*color: HSL(207, 6%, 61%);*/
 	/*color: HSL(205, 38%, 41%);*/
 	/*color: HSL(66, 71%, 44%);*/
-	color: #959BA0;
+	/*color: #959BA0;*/
+}
+
+a {
+	color: inherit;
+	-o-transition:.25s;
+	-ms-transition:.25s;
+	-moz-transition:.25s;
+	-webkit-transition:.25s;
+	transition:.25s;
+}
+a:hover {
+	color: #AFBD21;
 }
 
 header {
