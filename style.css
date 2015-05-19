@@ -112,6 +112,9 @@ header, .intro {
 header p, .intro p{
 	font-size:1.1em;
 }
+section.divider {
+	background-color: HSL(205, 6%, 61%);
+}
 
 
 /* Intro */
