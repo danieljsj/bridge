@@ -1,0 +1,79 @@
+/*body {*/
+  /*font-family: Helvetica; */
+/*}*/
+.donation-meter * {
+  box-sizing: content-box;
+}
+
+/**/
+
+.donation-meter {
+  /*margin-left: 30px;*/
+  width: 100px;
+  float:right;
+  margin:0 0 20px 20px;
+}
+.donation-meter .glass {
+  background: #e5e5e5;
+  border-radius: 100px 100px 0 0;
+  display: block;
+  height: 300px;
+  margin: 0 35px 10px;
+  padding: 5px;
+  position: relative;
+  width: 20px;
+}
+.donation-meter .amount {
+  background: #f34e54;
+  border-radius: 100px;
+  display: block;
+  width: 20px !important;
+  position: absolute;
+  bottom: 5px;
+}
+.donation-meter strong { 
+  display: block; 
+  text-align: center; 
+}
+.donation-meter .goal {
+  font-size: 30px;
+}
+.donation-meter .total {
+  font-size: 16px;
+  position: absolute;
+  /*right: 35px;*/
+  left: 35px;
+}
+
+
+
+.donation-meter .bulb {
+  background: #e5e5e5;
+  border-radius: 100px;
+  display: block;
+  height: 50px;
+  margin: 0 35px 10px;
+  padding: 5px;
+  position: relative;
+    top: -20px;
+    right: 15px;
+  width: 50px;
+}
+.donation-meter .bulb .red-circle {
+  background: #f34e54;
+  border-radius: 100px;
+  display: block;
+  height: 50px;
+  width: 50px;
+}
+.donation-meter .bulb .filler {
+  background: #f34e54;
+  border-radius: 100px 100px 0 0;
+  display: block;
+  height: 30px;
+  width: 20px;
+  position: relative;
+    top: -65px;
+    right: -15px;
+  z-index: 30;
+}
