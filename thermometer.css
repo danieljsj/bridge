@@ -13,6 +13,12 @@
   float:right;
   margin:0 0 40px 40px;
 }
+@media only screen and (max-width:360px) {
+.donation-meter {
+    margin:0 -20px 40px 20px;
+  }
+}
+
 .donation-meter .glass {
   background: #e5e5e5;
   border-radius: 100px 100px 0 0;
@@ -76,4 +82,11 @@
     top: -65px;
     right: -15px;
   z-index: 30;
+}
+
+
+.meter-caption {
+  text-align:center;
+  font-size:.8em;
+  margin:-20px 0 0;
 }

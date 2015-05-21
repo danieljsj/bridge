@@ -28,9 +28,10 @@ hr {
 
 img { max-width: 100%;}
 
-faint { 
-	opacity: .5; 
+iptm { 
 	font-weight: 200;
+	font-size:.7em;
+	vertical-align: top;
 }
 /* FRAMEWORK */
 
@@ -69,6 +70,8 @@ header {
 
 a {
 	color: inherit;
+}
+a, button, .button {
 	-o-transition:.25s;
 	-ms-transition:.25s;
 	-moz-transition:.25s;
@@ -121,7 +124,6 @@ header img {
 	width: 500px;
 	/*width: 550px;*/
 	max-width: 100%;
-	/*margin: -100px;*/
 }
 section.divider hr,
 header hr {
