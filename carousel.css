@@ -43,6 +43,6 @@ have a fixed width and height (but it's not required).
 .jcarousel li {
     float: left;
     width: 100px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* maybe */
     border:1px solid gray;
 }
