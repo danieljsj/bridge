@@ -46,17 +46,14 @@ have a fixed width and height (but it's not required).
     }
 }
 @media only screen and (max-width:1000px) {
-
-    /* things that were failing:
-    #b4h-news {
+    header {
+        display: block;
         overflow: hidden;
-        position: relative;
-    } 
-    .jcarousel {
-        width:100%;
-        width:auto;
     }
-    */
+    header content {
+        display: block;
+    }
+    /* .jcarousel width remains auto, #b4h-news position remains static*/
 }
 
 .jcarousel {
