@@ -3,6 +3,7 @@
 		<link rel="stylesheet" type="text/css" href="http://bridge4hope.org/style.css"></style>
 		<link rel="stylesheet" type="text/css" href="http://bridge4hope.org/kimbia.css"></style>
 		<link rel="stylesheet" type="text/css" href="http://bridge4hope.org/thermometer.css"></style>
+		<link rel="stylesheet" type="text/css" href="http://bridge4hope.org/carousel.css"></style>
 		
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,400italic' rel='stylesheet' type='text/css'>
 		
@@ -20,6 +21,9 @@
 
 	</head>
 	<body>
+
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.3/jquery.jcarousel.js"></script>
 		
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
@@ -53,7 +57,36 @@
 				<h5 style="color:#3A6F8F;font-weight:400;">Bridge4Hope<iptm>&trade;</iptm> is the charitable foundation of <a target="_blank" href="http://innovationpartners.org">Innovation Partners, LLC</a></h5>
 				<!--<div class="fb-like" data-href="https://www.facebook.com/Bridge4HopeFoundation" data-width="300px" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>-->
 				<!-- newsreel -->
-				HELLO I AM NEWS
+				
+
+				<div class="jcarousel">
+				    <ul>
+				        <li>a1</li>
+				        <li>b1</li>
+				        <li>c1</li>
+				        <li>d1</li>
+				        <li>e1</li>
+				        <li>a2</li>
+				        <li>b2</li>
+				        <li>c2</li>
+				        <li>d2</li>
+				        <li>e2</li>
+				    </ul>
+				</div>
+				<script>
+					$(function() {
+						var carousel = $('.jcarousel').jcarousel();
+						console.log('carousel: ',carousel);
+						setInterval(function(){
+							// carousel.scroll('+=1'); // not working...
+							// console.log("carousel.scroll('+=1');");
+							$('.jcarousel').jcarousel('scroll', '+=1');
+							console.log("$('.jcarousel').jcarousel('scroll', '+=1');");
+						},2000);
+					});
+				</script>
+
+
 			</content>
 		</header>
 		<section class="intro">
