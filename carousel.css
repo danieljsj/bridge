@@ -53,7 +53,9 @@ have a fixed width and height (but it's not required).
     header content {
         display: block;
     }
-    /* .jcarousel width remains auto, #b4h-news position remains static*/
+    .jcarousel {
+        width: 100vw;
+    }
 }
 #b4h-news .framing {
     font-weight: bold;
