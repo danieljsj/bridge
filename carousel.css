@@ -34,11 +34,17 @@ have a fixed width and height (but it's not required).
 }
 
 
+#b4h-news {
+    /*float:right;*/
+    position:absolute;
+    top:0;
+    right:0;
+}
 .jcarousel {
     position: relative;
     overflow: hidden;
-    width: 1900px;
-    /*width:250px;*/
+    /*width: 1900px;*/
+    width:250px;
     background-color: #f1f1f1; /* matches news site background */
 }
 
