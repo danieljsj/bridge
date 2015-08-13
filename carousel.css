@@ -37,12 +37,36 @@ have a fixed width and height (but it's not required).
 .jcarousel {
     position: relative;
     overflow: hidden;
-    width: 300px;
+    width: 1900px;
+    /*width:250px;*/
 }
 
 .jcarousel li {
     float: left;
-    width: 100px;
+    width: 250px;
     box-sizing: border-box; /* maybe */
     border:1px solid gray;
+}
+
+
+.jcarousel li img {
+    width:50px;
+    float:left;
+}
+.jcarousel h3 {
+    font-size:15px;
+    margin: 0 0 4px;
+}
+.jcarousel time {
+    font-size: 10px;
+}
+.jcarousel .rpwe-summary {
+    font-size:10px;
+}
+/*.jcarousel a.more-link:before {
+    content: " ";
+}*/
+.jcarousel a.more-link {
+    margin-left: .3em;
+    display: inline-block;
 }
