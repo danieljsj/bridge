@@ -34,17 +34,35 @@ have a fixed width and height (but it's not required).
 }
 
 
-#b4h-news {
-    /*float:right;*/
-    position:absolute;
-    top:0;
-    right:0;
+@media only screen and (min-width:1001px) {
+    #b4h-news {
+        /*float:right;*/
+        position:absolute;
+        top:0;
+        right:0;
+    }
+    .jcarousel {
+        width:250px;   
+    }
 }
+@media only screen and (max-width:1000px) {
+
+    /* things that were failing:
+    #b4h-news {
+        overflow: hidden;
+        position: relative;
+    } 
+    .jcarousel {
+        width:100%;
+        width:auto;
+    }
+    */
+}
+
 .jcarousel {
     position: relative;
     overflow: hidden;
     /*width: 1900px;*/
-    width:250px;
     background-color: #f1f1f1; /* matches news site background */
 }
 
