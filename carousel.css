@@ -55,6 +55,13 @@ have a fixed width and height (but it's not required).
     }
     /* .jcarousel width remains auto, #b4h-news position remains static*/
 }
+#b4h-news .framing {
+    font-weight: bold;
+    color: #888888;
+    color: white;
+    background-color: #bbbbbb;
+    background-color: #CFD787;
+}
 
 .jcarousel {
     position: relative;
@@ -68,7 +75,6 @@ have a fixed width and height (but it's not required).
     width: 250px;
     box-sizing: border-box; /* maybe */
     /*border:1px solid gray;*/
-    padding: 0 5px;
 }
 
 
@@ -79,18 +85,18 @@ have a fixed width and height (but it's not required).
 }
 .jcarousel h3 {
     font-size:15px;
-    margin: 0 0 4px;
     display: inline;
+    padding-top: .4em;
 }
 .jcarousel time {
-    font-size: 10px;
-    color:#aaaaaa;
+    font-size: 13px;
+    color:#999999;
     display: inline-block;
     margin: 0 0 .5em .5em;
 }
 .jcarousel .rpwe-summary {
-    font-size:10px;
-    margin-bottom: .5em;
+    font-size:13px;
+    margin: 0 .5em .5em;
 }
 /*.jcarousel a.more-link:before {
     content: " ";
