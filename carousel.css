@@ -39,29 +39,37 @@ have a fixed width and height (but it's not required).
     overflow: hidden;
     width: 1900px;
     /*width:250px;*/
+    background-color: #f1f1f1; /* matches news site background */
 }
 
 .jcarousel li {
     float: left;
     width: 250px;
     box-sizing: border-box; /* maybe */
-    border:1px solid gray;
+    /*border:1px solid gray;*/
+    padding: 0 5px;
 }
 
 
 .jcarousel li img {
     width:50px;
     float:left;
+    margin: 0 5px 5px 0;
 }
 .jcarousel h3 {
     font-size:15px;
     margin: 0 0 4px;
+    display: inline;
 }
 .jcarousel time {
     font-size: 10px;
+    color:#aaaaaa;
+    display: inline-block;
+    margin: 0 0 .5em .5em;
 }
 .jcarousel .rpwe-summary {
     font-size:10px;
+    margin-bottom: .5em;
 }
 /*.jcarousel a.more-link:before {
     content: " ";
