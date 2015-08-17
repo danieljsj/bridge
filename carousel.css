@@ -57,6 +57,9 @@ have a fixed width and height (but it's not required).
         width: 100vw;
     }
 }
+#b4h-news {
+    font-weight: normal;
+}
 #b4h-news .framing {
     font-weight: bold;
     color: #888888;

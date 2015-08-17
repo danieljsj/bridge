@@ -58,7 +58,7 @@
 				<!--<div class="fb-like" data-href="https://www.facebook.com/Bridge4HopeFoundation" data-width="300px" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>-->
 			</content>
 			<div id="b4h-news">
-				<div class="framing">Latest News:</div>
+				<div class="framing"><a href="news" style="text-decoration:none;">Latest News:</a></div>
 				<div class="jcarousel" style="display:inline-block; text-align:left;">
 					<!-- posts will load here -->
 				</div>
@@ -66,7 +66,9 @@
 
 					$(function() {
 						$('#b4h-news .jcarousel').load('news/excerpts ul', function(){
-							$('.jcarousel').jcarousel();
+							$('.jcarousel').jcarousel({
+							    wrap: 'both'
+							});
 							// console.log('carousel: ',carousel);
 							setInterval(function(){
 								$('.jcarousel').jcarousel('scroll', '+=1');
