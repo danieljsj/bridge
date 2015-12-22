@@ -34,7 +34,8 @@ have a fixed width and height (but it's not required).
 }
 
 
-@media only screen and (min-width:1001px) {
+/* @media only screen and (min-width:1001px) { <== pre-menu */
+@media only screen and (min-width:1201px) {
     #b4h-news {
         /*float:right;*/
         position:absolute;
@@ -45,7 +46,8 @@ have a fixed width and height (but it's not required).
         width:250px;   
     }
 }
-@media only screen and (max-width:1000px) {
+/* @media only screen and (max-width:1000px) {  { <== pre-menu */
+@media only screen and (max-width:1200px) {
     header {
         display: block;
         overflow: hidden;
