@@ -19,11 +19,12 @@
 		<meta name="og:description" content="Our mission is to bridge the gap between need and hope for our neighbors across the street and around the world. We aim to raise funds and awareness in support of organizations working to make a difference, both locally and globally." />
 		<meta name="og:image" content="images/bridge4hope-wide.png" /> 
 
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.3/jquery.jcarousel.js"></script>
+		<script src="js/parallax.js"></script>
 	</head>
 	<body>
 
-		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.3/jquery.jcarousel.js"></script>
 		
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
@@ -87,7 +88,7 @@
 
 			</div>
 
-			<div style="position: relative; top:10px; left:10px; opacity:.85" class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/Bridge4HopeFoundation" data-layout="button" data-action="like" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=445572965606079&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2FBridge4HopeFoundation&amp;layout=button&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false"><span style="vertical-align: bottom; width: 97px; height: 20px;"><iframe name="f26431180c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Bridge4Hope™ _ Double Your Donation - fixed fb, almost done_files/like.html" style="border: none; visibility: visible; width: 97px; height: 20px;" class=""></iframe></span></div>
+			<div style="position: relative; top:10px; left:10px; opacity:.85" class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/Bridge4HopeFoundation" data-layout="button" data-action="like" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=445572965606079&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2FBridge4HopeFoundation&amp;layout=button&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false"></div>
 		</div>
 
 
@@ -134,13 +135,31 @@
 				<p><a class="button" href="http://bridge4hope.org/news/donate/">Give now</a></p>
 			</inner>
 		</section>
-		<section class="divider" style="height:500px; background-image:url('images/friends-together-on-a-bridge-for-hope.jpg'); background-position:50% 33%;'); padding:0;">
+		<section class="divider" class="parallax-window" data-parallax="scroll" data-image-src="images/friends-together-on-a-bridge-for-hope.jpg" style="height:500px; padding:0;">
 			<content style="background-color:rgba(0,0,0,.2);">
 				<h3 style="text-align:center;font-weight:400;">Build a Bridge to Neighbors in Need:</h2>
 				<hr>
 				<h1>Give today</h1>
 			</content>
 		</section>
+
+
+
+
+		<div class="parallax-window" data-parallax="scroll" data-image-src="http://bridge4hope.org/images/friends-together-on-a-bridge-for-hope.jpg">HELLO I AM PARALLAX</div><!--  -->
+
+		<script>
+			$(function(){
+				$('.parallax-window').parallax({imageSrc: 'http://bridge4hope.org/images/friends-together-on-a-bridge-for-hope.jpg'});
+			});
+		</script>
+
+
+
+		<div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="http://bridge4hope.org/images/friends-together-on-a-bridge-for-hope.jpg" data-natural-width="1400" data-natural-height="900" style="height: 493px;"></div>
+
+
+
 		<section>
 			<inner>
 				
