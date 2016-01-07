@@ -192,13 +192,15 @@
 			
 
 			$(document).ready(function(){
+			    
+			    var p = {};
 
-				var imgSlideFactor = 0.33; // amount of total slide in relation to image height
-				var imgNatWidth = 1936;
-				var imgNatHeight = 1296;
+				p.imgSlideFactor = 0.33; // amount of total slide in relation to image height
+				p.imgNatWidth = 1936;
+				p.imgNatHeight = 1296;
 
 			    $(window).scroll(function(){
-			    	var el = $('#friends');
+			    	p.el = $('#friends');
 
 			    	// movement range (of elTop) is from winTop-winHeight to winTop+elHeight
 			    	// at start, when elTop is at bottom, bkg position is top@full upsuck (overflow above)
@@ -211,48 +213,36 @@
 			    	
 
 			    	// psuedoPermanent:
+			    	// 
 			    	
-			    	var imgHeight = el.height() * ( 1/(1-imgSlideFactor) );
-			    	el.css('background-size', "auto "+imgHeight+"px" );
+			    	p.imgHeight = p.el.height() * ( 1/(1-p.imgSlideFactor) );
+			    	p.el.css('background-size', "auto "+p.imgHeight+"px" );
 
-			    	var hiddenHeight = imgHeight - el.height();
+			    	p.hiddenHeight = p.imgHeight - p.el.height();
 
-			    	var winHeight = $(window).height();
-			    	var elHeight = el.height();
-			    	var elOffset = el.offset().top;
+			    	p.winHeight = $(window).height();
+			    	p.elHeight = p.el.height();
+			    	p.elOffset = p.el.offset().top;
 
-			    	var startWinTop = elOffset - winHeight;
-			    	var endWinTop = elOffset + elHeight;
+			    	p.startWinTop = p.elOffset - p.winHeight;
+			    	p.endWinTop = p.elOffset + p.elHeight;
 			    	
 
 			    	// changing:
 			    	
-			    	var scrollProgress = ( $(window).scrollTop() - startWinTop )  /  ( endWinTop - startWinTop );
+			    	p.scrollTop = $(window).scrollTop();
+
+			    	p.scrollProgress = ( p.scrollTop - p.startWinTop )  /  ( p.endWinTop - p.startWinTop );
 			    	// TODO: scrollprogress is goofy; it's starting at .62 at top of screen, 
 			    	// whereas it should be starting at like -8.0!
 
 
-			    	var upSuckPx = hiddenHeight * (1-scrollProgress);
+			    	p.upSuckPx = p.hiddenHeight * (1-p.scrollProgress);
 
 
-			    	el.css('background-position','50% -'+upSuckPx+'px');
+			    	p.el.css('background-position','50% -'+p.upSuckPx+'px');
 
-			    	console.log({
-
-			    		scrollProgress: scrollProgress,
-			    		upSuckPx: upSuckPx,
-			    		el: el,
-			    		
-			    		imgSlideFactor: imgSlideFactor,
-			    		imgHeight: imgHeight,
-			    		hiddenHeight: hiddenHeight,
-			    		winHeight: winHeight,
-			    		elHeight: elHeight,
-			    		elOffset: elOffset,
-			    		startWinTop: startWinTop,
-			    		endWinTop: endWinTop
-
-			    	});
+			    	console.log(p);
 			    });
 			});
 			</script>
