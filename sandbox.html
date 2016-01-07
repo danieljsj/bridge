@@ -220,21 +220,23 @@
 			    	p.el.css('background-size', "auto "+p.imgHeight+"px" );
 
 			    	p.hiddenHeight = p.imgHeight - p.el.height();
+			    	p.hiddenHeight = p.imgHeight * p.imgSlideFactor; // should be same
 
-			    	p.winHeight = $(window).height();
+			    	p.winHeight = $(window).height(); // returns viewport height if using <!DOCTYPE html>
 			    	p.elHeight = p.el.height();
-			    	p.elOffset = p.el.offset().top;
+			    	p.elOffsetTop = p.el.offset().top;
 
 
-			    	// TODO: CHANGE THIS: Assumes that the image must be fully covering element as long as element is visible at all:
-			    	p.startWinTop = p.elOffset - p.winHeight;
-			    	p.endWinTop = p.elOffset + p.elHeight;
+			    	// start of this scroll is from the time elBottom leaves winBottom till elTop reaches elTop. (assuming img moves slower, then img is always lagging, leaving screen-inner parts of elements covered.)
+			    	p.startWinTop = p.elOffsetTop - p.elHeight;
+			    	p.endWinTop = p.elOffsetTop;
 			    	
 
 			    	// changing:
 			    	
 			    	p.scrollTop = $(window).scrollTop();
 
+			    	// todo: change this to ScrollRemaining (fewer inversions that way)
 			    	p.scrollProgress = ( p.scrollTop - p.startWinTop )  /  ( p.endWinTop - p.startWinTop );
 
 			    	p.upSuckPx = p.hiddenHeight * (1-p.scrollProgress);
