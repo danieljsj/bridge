@@ -131,14 +131,14 @@
 
 					$(function() {
 						$('#b4h-news .jcarousel').load('news/excerpts ul', function(){
-							$('.jcarousel').jcarousel({
-							    wrap: 'both'
-							});
-							// console.log('carousel: ',carousel);
-							setInterval(function(){
-								$('.jcarousel').jcarousel('scroll', '+=1');
-								// console.log("$('.jcarousel').jcarousel('scroll', '+=1');");
-							},10*1000);
+							// $('.jcarousel').jcarousel({
+							//     wrap: 'both'
+							// });
+							// // console.log('carousel: ',carousel);
+							// setInterval(function(){
+							// 	$('.jcarousel').jcarousel('scroll', '+=1');
+							// 	// console.log("$('.jcarousel').jcarousel('scroll', '+=1');");
+							// },10*1000);
 						});
 					})
 				</script>
@@ -165,7 +165,7 @@
 				height:450px; 
 				padding:0; 
 				background-position:50% 50%; 
-				background-attachment:fixed;
+				background-attachment:fixedNOT;
 			"
 		>
 			<style>
@@ -198,7 +198,7 @@
 				var imgNatHeight = 1296;
 
 			    $(window).scroll(function(){
-			    	var el = $('friends');
+			    	var el = $('#friends');
 
 			    	// movement range (of elTop) is from winTop-winHeight to winTop+elHeight
 			    	// at start, when elTop is at bottom, bkg position is top@full upsuck (overflow above)
@@ -213,24 +213,37 @@
 			    	// psuedoPermanent:
 			    	
 			    	var imgHeight = el.height() * ( 1/(1-imgSlideFactor) );
+			    	el.css('background-size', "auto "+imgHeight+"px" );
+
 			    	var hiddenHeight = imgHeight - el.height();
 
-			    	var startWinTop = el.top() - $(window).height();
-			    	var endWinTop = el.top() + el.height();
+			    	var startWinTop = el.offset() - $(window).height();
+			    	var endWinTop = el.offset() + el.height();
 			    	
 
 			    	// changing:
 			    	
-			    	var scrollProgress = ( $(window).scrollTop() - startWinTop )  /  ( EndWinTop - startWinTop );
+			    	var scrollProgress = ( $(window).scrollTop() - startWinTop )  /  ( endWinTop - startWinTop );
+
 
 			    	var upSuckPx = hiddenHeight * (1-scrollProgress);
 
 
-			    	el
-			    		.css('background-size', "auto "+(1+imgSlideFactor)*100+"%" )
-			    		.css('background-position','50% '+upSuck*100+'%')
-			    		;
+			    	el.css('background-position','50% '+upSuckPx+'px');
 
+			    	console.log({
+
+			    		scrollProgress: scrollProgress,
+			    		upSuckPx: upSuckPx,
+			    		el: el,
+			    		
+			    		imgHeight: imgHeight,
+			    		imgSlideFactor: imgSlideFactor,
+			    		hiddenHeight: hiddenHeight,
+			    		startWinTop: startWinTop,
+			    		endWinTop: endWinTop
+
+			    	});
 			    });
 			});
 			</script>
