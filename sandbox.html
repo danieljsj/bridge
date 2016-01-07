@@ -201,26 +201,35 @@
 			    	var el = $('friends');
 
 			    	// movement range (of elTop) is from winTop-winHeight to winTop+elHeight
-			    	// when top is at bottom, bkg position is top@full upsuck (overflow above)
-			    	// when top above top, bkg position is top@0px (overflow below)
+			    	// at start, when elTop is at bottom, bkg position is top@full upsuck (overflow above)
+			    	// at end, when elTop above top, bkg position is top@0px (overflow below)
 			    	
 			    	// in terms of the window:
 
 			    	// start: window scrollTop is at elTop-windowHeight
-			    	var startWinTop = el.top() - $(window).height();
-			    	var endWinTop = el.top() + el.height();
 			    	// end: window scrollTop is at elTop+elHeight
 			    	
-			    	var scrollCompletion = ($(window).scrollTop() - startWinTop) / (EndWinTop - startWinTop);
+
+			    	// psuedoPermanent:
+			    	
+			    	var imgHeight = el.height() * ( 1/(1-imgSlideFactor) );
+			    	var hiddenHeight = imgHeight - el.height();
+
+			    	var startWinTop = el.top() - $(window).height();
+			    	var endWinTop = el.top() + el.height();
+			    	
+
+			    	// changing:
+			    	
+			    	var scrollProgress = ( $(window).scrollTop() - startWinTop )  /  ( EndWinTop - startWinTop );
+
+			    	var upSuckPx = hiddenHeight * (1-scrollProgress);
 
 
-			    	// percentScrolled = windowBottomY - elementBottomY
-
-			    	// var upSuck = el.height()
-
-			    	// el
-			    	// 	.css('background-size', "auto "+(1+imgSlideFactor)*100+"%" )
-			    	// 	.css('background-position','50% '+upSuck*100+'%')
+			    	el
+			    		.css('background-size', "auto "+(1+imgSlideFactor)*100+"%" )
+			    		.css('background-position','50% '+upSuck*100+'%')
+			    		;
 
 			    });
 			});
