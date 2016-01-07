@@ -228,6 +228,8 @@
 			    	// changing:
 			    	
 			    	var scrollProgress = ( $(window).scrollTop() - startWinTop )  /  ( endWinTop - startWinTop );
+			    	// TODO: scrollprogress is goofy; it's starting at .62 at top of screen, 
+			    	// whereas it should be starting at like -8.0!
 
 
 			    	var upSuckPx = hiddenHeight * (1-scrollProgress);
