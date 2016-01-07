@@ -217,8 +217,12 @@
 
 			    	var hiddenHeight = imgHeight - el.height();
 
-			    	var startWinTop = el.offset() - $(window).height();
-			    	var endWinTop = el.offset() + el.height();
+			    	var winHeight = $(window).height();
+			    	var elHeight = el.height();
+			    	var elOffset = el.offset().top;
+
+			    	var startWinTop = elOffset - winHeight;
+			    	var endWinTop = elOffset + elHeight;
 			    	
 
 			    	// changing:
@@ -237,9 +241,12 @@
 			    		upSuckPx: upSuckPx,
 			    		el: el,
 			    		
-			    		imgHeight: imgHeight,
 			    		imgSlideFactor: imgSlideFactor,
+			    		imgHeight: imgHeight,
 			    		hiddenHeight: hiddenHeight,
+			    		winHeight: winHeight,
+			    		elHeight: elHeight,
+			    		elOffset: elOffset,
 			    		startWinTop: startWinTop,
 			    		endWinTop: endWinTop
 
