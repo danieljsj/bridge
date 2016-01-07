@@ -26,14 +26,7 @@
 		<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/jquery.parallax.js"></script> -->
 		<script src="js/stellar.js"></script>
 
-		<script>
-		$(function(){
-			$.stellar({
-				horizontalScrolling: false,
-				verticalOffset: 40
-			});
-		});
-		</script>
+
 
 		<style>
 			.photo {
@@ -161,12 +154,78 @@
 
 
 
-		<section class="divider" class="photo" data-stellar-background-ratio="0.33" style="background-image:url(http://bridge4hope.org/images/friends-together-on-a-bridge-for-hope.jpg); height:450px; padding:0;">
+		<section 
+			id="friends" 
+			class="divider" 
+			class="photo" 
+			data-stellar-background-ratio-NOT="0.25"
+			data-stellar-vertical-offset-NOT="0"
+			style="
+				background-image:url(http://bridge4hope.org/images/friends-together-on-a-bridge-for-hope.jpg); 
+				height:450px; 
+				padding:0; 
+				background-position:50% 50%; 
+				background-attachment:fixed;
+			"
+		>
+			<style>
+				@media screen and (max-width:1200px){
+				    #friends { background-size: 1200px auto; }
+				}
+				@media screen and (min-width:1201px){
+				    #friends { background-size: cover; }
+				}
+			</style>
+
 			<content style="background-color:rgba(0,0,0,.2);">
 				<h3 style="text-align:center;font-weight:400;">Build a Bridge to Neighbors in Need:</h2>
 				<hr>
 				<h1>Give today</h1>
 			</content>
+
+			<script>
+			// $(function(){
+			// 	$.stellar({
+			// 		horizontalScrolling: false,
+			// 	});
+			// });
+			
+
+			$(document).ready(function(){
+
+				var imgSlideFactor = 0.33; // amount of total slide in relation to image height
+				var imgNatWidth = 1936;
+				var imgNatHeight = 1296;
+
+			    $(window).scroll(function(){
+			    	var el = $('friends');
+
+			    	// movement range (of elTop) is from winTop-winHeight to winTop+elHeight
+			    	// when top is at bottom, bkg position is top@full upsuck (overflow above)
+			    	// when top above top, bkg position is top@0px (overflow below)
+			    	
+			    	// in terms of the window:
+
+			    	// start: window scrollTop is at elTop-windowHeight
+			    	var startWinTop = el.top() - $(window).height();
+			    	var endWinTop = el.top() + el.height();
+			    	// end: window scrollTop is at elTop+elHeight
+			    	
+			    	var scrollCompletion = ($(window).scrollTop() - startWinTop) / (EndWinTop - startWinTop);
+
+
+			    	// percentScrolled = windowBottomY - elementBottomY
+
+			    	// var upSuck = el.height()
+
+			    	// el
+			    	// 	.css('background-size', "auto "+(1+imgSlideFactor)*100+"%" )
+			    	// 	.css('background-position','50% '+upSuck*100+'%')
+
+			    });
+			});
+			</script>
+
 		</section>
 
 
