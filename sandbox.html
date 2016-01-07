@@ -195,7 +195,8 @@
 			    
 			    var p = {};
 
-				p.imgSlideFactor = 0.33; // amount of total slide in relation to image height
+				p.imgSlideFactor = 0.6; // amount of total slide in relation to image height. 
+					// NOTE - if this is too large, the image will not just be slower at moving up than the foreground... it will actually backtrack!
 				p.imgNatWidth = 1936;
 				p.imgNatHeight = 1296;
 
@@ -224,6 +225,8 @@
 			    	p.elHeight = p.el.height();
 			    	p.elOffset = p.el.offset().top;
 
+
+			    	// TODO: CHANGE THIS: Assumes that the image must be fully covering element as long as element is visible at all:
 			    	p.startWinTop = p.elOffset - p.winHeight;
 			    	p.endWinTop = p.elOffset + p.elHeight;
 			    	
@@ -233,9 +236,6 @@
 			    	p.scrollTop = $(window).scrollTop();
 
 			    	p.scrollProgress = ( p.scrollTop - p.startWinTop )  /  ( p.endWinTop - p.startWinTop );
-			    	// TODO: scrollprogress is goofy; it's starting at .62 at top of screen, 
-			    	// whereas it should be starting at like -8.0!
-
 
 			    	p.upSuckPx = p.hiddenHeight * (1-p.scrollProgress);
 
