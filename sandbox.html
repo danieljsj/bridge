@@ -161,20 +161,21 @@
 			data-stellar-background-ratio-NOT="0.25"
 			data-stellar-vertical-offset-NOT="0"
 			style="
-				background-image:url(http://bridge4hope.org/images/friends-together-on-a-bridge-for-hope.jpg); 
-				height:450px; 
-				padding:0; 
-				background-position:50% 50%; 
-				background-attachment:fixedNOT;
+				background-image:url(http://bridge4hope.org/images/friends-together-on-a-bridge-for-hope-2.jpg); 
+				height: 450px; 
+				padding: 0; 
+				background-attachment: fixed;
+				background-size: cover;
+				background-position: 50%;
 			"
 		>
 			<style>
-				@media screen and (max-width:1200px){
+/*				@media screen and (max-width:1200px){
 				    #friends { background-size: 1200px auto; }
 				}
 				@media screen and (min-width:1201px){
 				    #friends { background-size: cover; }
-				}
+				}*/
 			</style>
 
 			<content style="background-color:rgba(0,0,0,.2);">
@@ -193,15 +194,21 @@
 
 			$(document).ready(function(){
 			    
-			    var p = {};
+			    FAIL.FAIL.FAIL();
 
-				p.imgSlideFactor = 0.45; // amount of total slide in relation to image height. 
+			    var _ = {};
+
+				_.scrollRate = 0.3; // amount of total slide in relation to image height. 
 					// NOTE - if this is too large, the image will not just be slower at moving up than the foreground... it will actually backtrack!
-				p.imgNatWidth = 1936;
-				p.imgNatHeight = 1296;
+				_.imgNatWidth = 1936;
+				_.imgNatHeight = 1296;
+		    	
+			    _.el = $('#friends');
+		    	_.winHeight = $(window).height(); // returns viewport height if using <!DOCTYPE html>
+		    	_.elHeight = _.el.height();
+			    _.elOffsetTop = _.el.offset().top;
 
 			    $(window).scroll(function(){
-			    	p.el = $('#friends');
 
 			    	// movement range (of elTop) is from ScrollTop-winHeight to ScrollTop+elHeight
 			    	// at start, when elTop is at bottom, bkg position is top@full upsuck (overflow above)
@@ -216,32 +223,28 @@
 			    	// psuedoPermanent:
 			    	// 
 			    	
-			    	p.imgHeight = p.el.height() * ( 1/(1-p.imgSlideFactor) );
-			    	p.el.css('background-size', "auto "+p.imgHeight+"px" );
+			    	_.hiddenHeight = (1-_.scrollRate) * (_.winHeight - _.elHeight);
 
-			    	p.hiddenHeight = p.imgHeight - p.el.height();
-			    	p.hiddenHeight = p.imgHeight * p.imgSlideFactor; // should be same
+			    	_.el.css('background-size', "auto "+_.imgHeight+"px" );
 
-			    	p.winHeight = $(window).height(); // returns viewport height if using <!DOCTYPE html>
-			    	p.elHeight = p.el.height();
-			    	p.elOffsetTop = p.el.offset().top;
+			    	_.imgHeight = _.elHeight + _.hiddenHeight;
 
 
-			    	// start of this scroll is from the time elBottom leaves winBottom till elTop reaches elTop. (assuming img moves slower, then img is always lagging, leaving screen-inner parts of elements covered.)
-			    	p.startScrollTop = p.elOffsetTop - p.elHeight;
-			    	p.endScrollTop = p.elOffsetTop;
+			    	// start of this scroll is from the time elBottom leaves winBottom till elTop reaches elTo_. (assuming img moves slower, then img is always lagging, leaving screen-inner parts of elements covered.)
+			    	_.startScrollTop = _.elOffsetTop - _.elHeight;
+			    	_.endScrollTop = _.elOffsetTop;
 			    	
 
 			    	// changing:
 			    	
-			    	p.scrollTop = $(window).scrollTop();
+			    	_.scrollTop = $(window).scrollTop();
 
 			    	// todo: change this to scrollRemaining (fewer inversions that way)
-			    	p.scrollRemaining = ( p.endScrollTop - p.scrollTop )  /  ( p.endScrollTop - p.startScrollTop );
+			    	_.scrollRemaining = ( _.endScrollTop - _.scrollTop )  /  ( _.endScrollTop - _.startScrollTop );
 
-			    	p.imageTopOffset = -1 * p.hiddenHeight * p.scrollRemaining;
+			    	_.imageTopOffset = -1 * _.hiddenHeight * _.scrollRemaining;
 
-			    	p.el.css('background-position','50% '+p.imageTopOffset+'px');
+			    	_.el.css('background-position','50% '+_.imageTopOffset+'px');
 
 			    	console.log(p);
 			    });
@@ -256,7 +259,14 @@
 
 		<section class="intro">
 			<inner>
-				<div class="one_half_last" style="width:50%; padding: 20px; box-sizing:border-box; float:left;">
+				<style type="text/css">
+					@media only screen and (min-width: 930px){
+						.one_half {
+							width: 50%;
+						}
+					}
+				</style>
+				<div class="one_half last" style="padding: 20px; box-sizing:border-box; float:left;">
 					<b>Americans gave $358.38 billion in 2014, with 8% given to health care related causes.</b>
 					<style>.icons {font-size:2em; margin: 20px;}</style>
 					<hr/>
@@ -307,7 +317,7 @@
 					<br/>
 					<i class="fa fa-gift"></i> = 10 billion dollars
 				</div>
-				<div class="one_half" style="width:50%; padding: 20px; box-sizing:border-box; float:left;">
+				<div class="one_half" style="padding: 20px; box-sizing:border-box; float:left;">
 					<b>In 2014, individuals accounted for 72% of total charitable giving in the U.S.</b>
 					<hr/>
 					<div class="icons">
