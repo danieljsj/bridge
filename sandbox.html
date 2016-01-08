@@ -195,7 +195,7 @@
 			    
 			    var p = {};
 
-				p.imgSlideFactor = 0.6; // amount of total slide in relation to image height. 
+				p.imgSlideFactor = 0.45; // amount of total slide in relation to image height. 
 					// NOTE - if this is too large, the image will not just be slower at moving up than the foreground... it will actually backtrack!
 				p.imgNatWidth = 1936;
 				p.imgNatHeight = 1296;
@@ -203,7 +203,7 @@
 			    $(window).scroll(function(){
 			    	p.el = $('#friends');
 
-			    	// movement range (of elTop) is from winTop-winHeight to winTop+elHeight
+			    	// movement range (of elTop) is from ScrollTop-winHeight to ScrollTop+elHeight
 			    	// at start, when elTop is at bottom, bkg position is top@full upsuck (overflow above)
 			    	// at end, when elTop above top, bkg position is top@0px (overflow below)
 			    	
@@ -228,21 +228,20 @@
 
 
 			    	// start of this scroll is from the time elBottom leaves winBottom till elTop reaches elTop. (assuming img moves slower, then img is always lagging, leaving screen-inner parts of elements covered.)
-			    	p.startWinTop = p.elOffsetTop - p.elHeight;
-			    	p.endWinTop = p.elOffsetTop;
+			    	p.startScrollTop = p.elOffsetTop - p.elHeight;
+			    	p.endScrollTop = p.elOffsetTop;
 			    	
 
 			    	// changing:
 			    	
 			    	p.scrollTop = $(window).scrollTop();
 
-			    	// todo: change this to ScrollRemaining (fewer inversions that way)
-			    	p.scrollProgress = ( p.scrollTop - p.startWinTop )  /  ( p.endWinTop - p.startWinTop );
+			    	// todo: change this to scrollRemaining (fewer inversions that way)
+			    	p.scrollRemaining = ( p.endScrollTop - p.scrollTop )  /  ( p.endScrollTop - p.startScrollTop );
 
-			    	p.upSuckPx = p.hiddenHeight * (1-p.scrollProgress);
+			    	p.imageTopOffset = -1 * p.hiddenHeight * p.scrollRemaining;
 
-
-			    	p.el.css('background-position','50% -'+p.upSuckPx+'px');
+			    	p.el.css('background-position','50% '+p.imageTopOffset+'px');
 
 			    	console.log(p);
 			    });
